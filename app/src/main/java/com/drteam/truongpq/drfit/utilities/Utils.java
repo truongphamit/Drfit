@@ -142,6 +142,61 @@ public class Utils {
         return date;
     }
 
+    public static String dateStringFormatWeek(long msecs) {
+        String date = "";
+        GregorianCalendar cal = new GregorianCalendar();
+
+        cal.setTime(new Date(msecs));
+
+        date += cal.get(Calendar.DAY_OF_MONTH);
+
+        switch (cal.get(Calendar.MONTH)) {
+            case Calendar.JANUARY:
+                date += " Jan";
+                break;
+            case Calendar.FEBRUARY:
+                date += " Feb";
+                break;
+            case Calendar.MARCH:
+                date += " Mar";
+                break;
+            case Calendar.APRIL:
+                date += " Apr";
+                break;
+            case Calendar.MAY:
+                date += " May";
+                break;
+            case Calendar.JUNE:
+                date += " Jun";
+                break;
+            case Calendar.JULY:
+                date += " Jul";
+                break;
+            case Calendar.AUGUST:
+                date += " Aug";
+                break;
+            case Calendar.SEPTEMBER:
+                date += " Sep";
+                break;
+            case Calendar.OCTOBER:
+                date += " Oct";
+                break;
+            case Calendar.NOVEMBER:
+                date += " Nov";
+                break;
+            case Calendar.DECEMBER:
+                date += " Dec";
+                break;
+            default:
+                date += " Unknown";
+                break;
+        }
+
+        date += ", ";
+        date += cal.get(Calendar.YEAR);
+        return date;
+    }
+
     public static long getFirstDayOfWeek(long ms) {
         GregorianCalendar cal = new GregorianCalendar();
         cal.setTime(new Date(ms));
@@ -197,5 +252,11 @@ public class Utils {
         GregorianCalendar cal = new GregorianCalendar();
         cal.setTime(new Date(ms));
         return cal.get(Calendar.YEAR);
+    }
+
+    public static int getDayOfMonthFromMs(long ms) {
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(new Date(ms));
+        return cal.get(Calendar.DAY_OF_MONTH);
     }
 }

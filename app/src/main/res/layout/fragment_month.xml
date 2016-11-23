@@ -9,6 +9,13 @@
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart_ex"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <RelativeLayout
@@ -21,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="From 00:00 to 23:59"
+            android:text="@string/details"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 

@@ -10,12 +10,13 @@
     tools:showIn="@layout/app_bar_main">
 
     <com.github.lzyzsd.circleprogress.ArcProgress
+        android:layout_marginTop="16dp"
         android:id="@+id/arc_progress"
         android:layout_width="256dp"
         android:layout_height="256dp"
         android:layout_centerHorizontal="true"
         app:arc_bottom_text_size="16sp"
-        app:arc_finished_color="#69fffd"
+        app:arc_finished_color="@android:color/holo_red_light"
         app:arc_max="10000"
         app:arc_progress="3000"
         app:arc_stroke_width="12dp"
