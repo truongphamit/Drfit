@@ -4,21 +4,26 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_today"
+            android:icon="@drawable/ic_insert_chart"
             android:title="@string/day" />
         <item
             android:id="@+id/nav_week"
+            android:icon="@drawable/ic_insert_chart"
             android:title="@string/week" />
         <item
             android:id="@+id/nav_month"
+            android:icon="@drawable/ic_insert_chart"
             android:title="@string/month" />
     </group>
 
     <item android:title="@string/other">
         <menu>
             <item
+                android:icon="@drawable/ic_settings"
                 android:id="@+id/nav_settings"
                 android:title="@string/settings" />
             <item
+                android:icon="@drawable/ic_info"
                 android:id="@+id/nav_info"
                 android:title="@string/information" />
         </menu>

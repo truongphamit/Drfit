@@ -11,7 +11,7 @@ public class TimeAxisValueFormatter implements IAxisValueFormatter {
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
         int time = (int) value;
-        return String.valueOf(time);
+        return String.valueOf(time) + "h";
     }
 
     @Override

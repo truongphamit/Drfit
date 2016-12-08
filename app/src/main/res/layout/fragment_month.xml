@@ -5,15 +5,8 @@
     android:orientation="vertical"
     tools:context="com.drteam.truongpq.drfit.fragments.MonthFragment">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/chart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:visibility="gone" />
-
     <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/chart_ex"
+        android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />
