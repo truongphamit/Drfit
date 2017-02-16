@@ -5,6 +5,7 @@ package com.drteam.truongpq.drfit.services;
  */
 
 import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 
+import com.drteam.truongpq.drfit.MainActivity;
 import com.drteam.truongpq.drfit.R;
 import com.github.lzyzsd.circleprogress.ArcProgress;
 
@@ -79,6 +81,7 @@ public class StepCounterService extends Service {
                 .setSmallIcon(R.drawable.ic_walk)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
                 .build();
+        notification.contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
         startForeground(STEP_COUNTER_SERVICE_NOTIFICATIN_ID, notification);
 
         return START_STICKY;

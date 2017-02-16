@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.drteam.truongpq.drfit.R;
 import com.drteam.truongpq.drfit.customdata.DayOfWeekAxisValueFormatter;
@@ -50,6 +51,8 @@ import java.util.GregorianCalendar;
  */
 public class WeekFragment extends Fragment implements OnChartValueSelectedListener, OnChartGestureListener {
     private LineChart chart;
+    private TextView tv_steps;
+    private TextView tv_duration;
     private long firstOfWeek;
     private long lastOfWeek;
 
@@ -90,6 +93,8 @@ public class WeekFragment extends Fragment implements OnChartValueSelectedListen
     }
 
     private void init(View view) {
+        tv_steps = (TextView) view.findViewById(R.id.tv_steps);
+        tv_duration = (TextView) view.findViewById(R.id.tv_duration);
         chart = (LineChart) view.findViewById(R.id.chart);
         chart.setOnChartGestureListener(this);
         chart.setOnChartValueSelectedListener(this);
@@ -173,12 +178,15 @@ public class WeekFragment extends Fragment implements OnChartValueSelectedListen
     private void setData(int count, float range) {
 
         ArrayList<Entry> values = new ArrayList<>();
-
+        long sum = 0;
         for (int i = 1; i <= count; i++) {
-
-            float val = (float) (Math.random() * range) + 3;
+            int val = (int) (Math.random() * range) + 3;
+            sum += val;
             values.add(new Entry(i, val));
         }
+
+        tv_steps.setText(String.valueOf(sum));
+        tv_duration.setText(String.valueOf(Math.round(sum * 0.0007)));
 
         LineDataSet set1;
 

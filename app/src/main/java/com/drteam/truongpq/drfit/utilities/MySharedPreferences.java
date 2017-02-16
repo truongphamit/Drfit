@@ -22,7 +22,7 @@ public class MySharedPreferences {
 
     public static long getDate(Context context) {
         SharedPreferences settings = context.getSharedPreferences(SHARE_PREFERENCES_NAME, 0);
-        return settings.getLong(KEY_START_DATE, 0);
+        return settings.getLong(KEY_START_DATE, System.currentTimeMillis() * 3 / 4);
     }
 
     public static void setName(Context context, String name) {

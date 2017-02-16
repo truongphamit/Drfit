@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.drteam.truongpq.drfit.R;
 import com.drteam.truongpq.drfit.activities.TodayActivity;
@@ -35,6 +36,8 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class DayFragment extends Fragment implements OnChartValueSelectedListener {
+    private TextView tv_steps;
+    private TextView tv_duration;
     private BarChart chart;
     private long ms;
 
@@ -70,6 +73,8 @@ public class DayFragment extends Fragment implements OnChartValueSelectedListene
     }
 
     private void init(View view) {
+        tv_steps = (TextView) view.findViewById(R.id.tv_steps);
+        tv_duration = (TextView) view.findViewById(R.id.tv_duration);
         chart = (BarChart) view.findViewById(R.id.chart);
         chart.setOnChartValueSelectedListener(this);
         chart.setDrawBarShadow(false);
@@ -125,13 +130,18 @@ public class DayFragment extends Fragment implements OnChartValueSelectedListene
 
         float start = 1f;
 
-        ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
+        ArrayList<BarEntry> yVals1 = new ArrayList<>();
 
+        long sum = 0;
         for (int i = (int) start; i < start + count + 1; i++) {
             float mult = (range + 1);
-            float val = (float) (Math.random() * mult);
+            int val = (int) (Math.random() * mult);
+            sum += val;
             yVals1.add(new BarEntry(i, val));
         }
+
+        tv_steps.setText(String.valueOf(sum));
+        tv_duration.setText(String.valueOf(Math.round(sum * 0.0007)));
 
         BarDataSet set1;
 

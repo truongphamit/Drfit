@@ -18,7 +18,7 @@
         app:arc_bottom_text_size="16sp"
         app:arc_finished_color="@android:color/holo_red_light"
         app:arc_max="10000"
-        app:arc_progress="3000"
+        app:arc_progress="0"
         app:arc_stroke_width="12dp"
         app:arc_suffix_text="steps"
         app:arc_suffix_text_padding="16dp"
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="60"
+            android:text="0"
             android:textColor="@android:color/white"
             android:textSize="22sp" />
 
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="5"
+            android:text="0"
             android:textColor="@android:color/white"
             android:textSize="22sp" />
 
